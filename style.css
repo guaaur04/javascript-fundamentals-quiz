@@ -1,0 +1,29 @@
+
+body{
+    background: peachpuff;
+}
+
+::selection{
+    background: lavender;
+    color: black;
+}
+.start-btn.
+.box,
+.quiz-box,
+.result-box{
+    position: absolute;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.info-title{}
+
+.info-list {}
+
+.info{}
+
+.buttons {}
+
+.quit{}
+
+.restart{}
