@@ -1,77 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Javascript Questions</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
 </head>
-
-
-<body>
-   
 <header>Welcome to the Javascript Quiz</header>
 <h2> Get ready! </h2>
 
-<!--- Start -->
-<div class ="start-button"><button>Start Quiz</button></div>
 
- <!---How to play?-->
-    <div class="box">
-                <div class="info-title"><span>Game Information</span></div>
-                <div class="info-list">
+<body>
+
+    <!--- Start -->
+
+
+    <!---How to play?-->
+    <div class="info-box">
+        <div class="info-title"><span>Game Information</span></div>
+        <div class="info-list">
             <div class="info-list">
-                <div class="info">You will have 3 minutes to complete the quiz.<div class="info">Incorrect answers incur a 30 second penalty.</div>
-                <div class="info">5 points for every correct answer.</div>
+                <div class="info">You will have 3 minutes to complete the quiz.<div class="info">Incorrect answers incur
+                        a 30 second penalty.</div>
+                    <div class="info">5 points for every correct answer.</div>
+                </div>
+
+                <div class="buttons">
+                    <button id="start-button">Start</button>
+
+                    <button class="quit">Get me out of here!</button>
+                    <button class="restart">Keep it going!</button>
+                </div>
+
             </div>
 
-            <div class="buttons">
+            <!---The Quiz-->
+            <div id="quiz-box">
 
-                <button class="quit">Get me out of here!</button>
-                <button class="restart">Keep it going!</button>
-            </div>
-            
-        </div>
-            
- <!---The Quiz-->
-<div class="quiz-box">
-    <header>
-        <div class="title">The Javascript Quiz<div>
-        <div class="timer">
-            <div class="time-left">Time Left</div>
-            <div class="timer-countdown">3:00</div>
-        </div>
+                <div class="title">
+                    <h4 id="questions"></h4>
+                    <button id="option1" class="answers" data-value="A"></button>
+                    <button id="option2" class="answers" data-value="B"></button>
+                    <button id="option3" class="answers" data-value="C"></button>
+                    <button id="option4" class="answers" data-value="D"></button>
 
-        <div class="time-line"><div> 
-    </header>
-
- <!---There are Javascript references here-->
-    <section>
-        <div class="questions"></div>
-        <div class="choices-list"></div>
-    </section>
-
-    <footer>
-        <div class="total-questions"></div>
-        <button class="next-btn">Next</button>
-    </footer>
-</div>
-
- <!---The results-->
-<div class="result-box">
-    <div class="score-alert"></div>
-    <div class="buttons">
-        <button class="restart">Play again</button>
-        <button class="quit">Quit</button>
-    </div>
-</div>
+                    <div class="timer">
+                        <div class="time-left">Time Left</div>
+                        <div class="timer-countdown"></div>
+                    </div>
+                </div>
+                    <div class="time-line">
+                    
 
 
-</div>
+                            <!---There are Javascript references here-->
+                            <section>
+                                <div class="questions"></div>
+                                <div class="choices-list"></div>
+                            </section>
 
 
-<script src="./script.js"></script>
+                            <div class="total-questions"></div>
+                            <button class="next-btn">Next</button>
+
+                     
+
+                        <!---The results-->
+                        <div id="result-box">
+                            <div class="score-alert"></div>
+                            <div class="buttons">
+                                <button class="restart">Play again</button>
+                                <button class="quit">Quit</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <script src="./script.js"></script>
 
 </body>
 
