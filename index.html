@@ -16,71 +16,61 @@
 
     <!--- Start -->
 
-
     <!---How to play?-->
     <div class="info-box">
         <div class="info-title"><span>Game Information</span></div>
         <div class="info-list">
             <div class="info-list">
-                <div class="info">You will have 3 minutes to complete the quiz.<div class="info">Incorrect answers incur
-                        a 30 second penalty.</div>
-                    <div class="info">5 points for every correct answer.</div>
-                </div>
-
-                <div class="buttons">
-                    <button id="start-button">Start</button>
-
-                    <button class="quit">Get me out of here!</button>
-                    <button class="restart">Keep it going!</button>
-                </div>
-
-            </div>
-
-            <!---The Quiz-->
-            <div id="quiz-box">
-
-                <div class="title">
-                    <h4 id="questions"></h4>
-                    <button id="option1" class="answers" data-value="A"></button>
-                    <button id="option2" class="answers" data-value="B"></button>
-                    <button id="option3" class="answers" data-value="C"></button>
-                    <button id="option4" class="answers" data-value="D"></button>
-
-                    <div class="timer">
-                        <div class="time-left">Time Left</div>
-                        <div class="timer-countdown"></div>
+                <div class="info">You have 3 minutes to complete the quiz.<div class="info">30 seconds off the clock for
+                        every wrong answer.
+                        <div class="info">5 points for every correct answer.</div>
                     </div>
+
+                    <div class="buttons">
+                        <button id="start-button">Start</button>
+                    </div>
+
                 </div>
-                    <div class="time-line">
+
+                <!---The Quiz-->
+                <div id="quiz-box">
+
+                    <div class="title">
+                        <h4 id="questions"></h4>
+                        <button id="option1" class="answers" data-value="A"></button>
+                        <button id="option2" class="answers" data-value="B"></button>
+                        <button id="option3" class="answers" data-value="C"></button>
+                        <button id="option4" class="answers" data-value="D"></button>
+                    </div>
+
+                        <div id="time-line"></div>
                     
+                        <aside class="timer"></aside>
 
+                        <div id="timer-countdown">
+                            <p id="mins">Minutes</p>
+                            <p id="secs">Seconds</p>
+                            <h4 id="end"></h4>
 
-                            <!---There are Javascript references here-->
-                            <section>
-                                <div class="questions"></div>
-                                <div class="choices-list"></div>
-                            </section>
-
-
-                            <div class="total-questions"></div>
-                            <button class="next-btn">Next</button>
-
-                     
-
-                        <!---The results-->
-                        <div id="result-box">
-                            <div class="score-alert"></div>
-                            <div class="buttons">
-                                <button class="restart">Play again</button>
-                                <button class="quit">Quit</button>
-                            </div>
                         </div>
 
+                        
+
+                    </aside>
+
+                </div>
+                <!---The results-->
+                <div id="result-box">
+                    <h1>Score</h1>
+                    <div id="score-alert"></div>
+                    <div class="buttons">
+                        <input type="text" id="username" />
+                        <button id="restart">Save Username</button>
 
                     </div>
+                </div>
 
-
-                    <script src="./script.js"></script>
+                <script src="./script.js"></script>
 
 </body>
 
