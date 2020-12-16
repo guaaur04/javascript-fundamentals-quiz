@@ -1,12 +1,61 @@
 body{
     background: burlywood;
+    
 }
 
 ::selection{
     background: lavender;
     color: black;
 }
-.start-btn, 
+
+.header {
+    text-align: center;
+    display: inline-flex;
+    width: 100%;
+    margin: 3em;
+    padding: 3em;
+    position: relative;
+    
+}
+
+#info-box{
+    border: 3px solid rgb(128, 62, 42);
+    display: inline-flex; 
+    width: 100%; 
+    margin: 3em;
+    position:relative;
+}
+
+.info-title {
+    size: large;
+}
+
+#quiz-box{
+    border: 3px solid rgb(128, 62, 42);
+
+}
+
+p {
+    display: flex;
+    text-align: left;
+    float: right;
+    flex-wrap: wrap;
+    
+  }
+
+  button {
+        background-color:#008CBA; 
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+
+
+.start-button, 
 .info-box,
 .quiz-box,
 .result-box{
@@ -14,3 +63,4 @@ body{
     left:50%;
     transform: translate(-50%, -50%);
 }
+

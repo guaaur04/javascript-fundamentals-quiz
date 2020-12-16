@@ -1,4 +1,4 @@
-//Create array of questions, answers, and options. 
+//Creates array of questions, answers, and options. 
 var currentQuestion = 0
 var questiondb = [
   {
@@ -14,7 +14,7 @@ var questiondb = [
   },
   {
     number: 2,
-    question: "What is the proper way to link ",
+    question: "What is the proper way to link a Javascript file into your HTML file?",
     answer: "B",
     options: [
       "Option 1",
@@ -25,7 +25,7 @@ var questiondb = [
   },
   {
     number: 3,
-    question: "Question",
+    question: "What is NaN?",
     answer: "C",
     options: [
       "Option 1",
@@ -36,7 +36,7 @@ var questiondb = [
   },
   {
     number: 4,
-    question: "Question",
+    question: "What is the difference between local and session storage?",
     answer: "D",
     options: [
       "Option 1",
@@ -47,7 +47,7 @@ var questiondb = [
   },
   {
     number: 5,
-    question: "Question",
+    question: "Where's my dog?",
     answer: "E",
     options: [
       "Option 1",
@@ -59,7 +59,7 @@ var questiondb = [
   {
     number: 6,
     question: "What is HTML?",
-    answer: "F",
+    answer: "A",
     options: [
       "Hyper Text mark up language",
       "Option 2",
@@ -69,7 +69,7 @@ var questiondb = [
   },
 ];
 
-//Calling to the elements  
+//Calling to the elements... 
 var startButton = document.querySelector("#start-button");
 var resultBox = document.querySelector("#result-box");
 var quizBox = document.querySelector("#quiz-box");
@@ -81,107 +81,121 @@ var option4 = document.getElementById("option4")
 var score = document.getElementById("#score")
 var timeline = document.getElementById("#timer")
 var userName = document.getElementById("username")
-var restart = document.getElementById("restart")
 var timer = document.getElementById("#timer-countdown")
+var minutes = document.getElementById("mins")
+var seconds = document.getElementById("secs")
+var scoreChart = document.querySelector("#score-chart")
+var saveUsername =document.querySelector("#save-username")
 
+//Hides results and quiz box 
 resultBox.style.display = "none";
 quizBox.style.display = "none";
 
-
 var score = 0;
-var countDownDate = new Date(":3:00").getTime();
+var timeLeft = 0;
 
 //Timer function
-var timer = setInterval(function () {
+function showTimer() {
+  timeLeft = 20
 
-  var now = new Date().getTime();
-  var timeLeft = countDownDate - now;
+  timer = setInterval(function () {
+    timeLeft--
+    document.getElementById("secs").innerHTML = timeLeft
 
-  //Calculating the minutes and seconds
-  var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    //Display the message when countdown is over 
+    if (timeLeft < 0) {
+      clearInterval(timeLeft);
+      document.getElementById("secs").innerHTML = ""
+      document.getElementById("end").innerHTML = "Time's up!";
+      quizBox.style.display = "none";
+      resultBox.style.display = "block";
+    }
+  }, 1000);
 
-//Allows time to display on screen
-document.getElementById("mins").innerHTML = minutes
-document.getElementsByTagName("secs").innerHTML = seconds
-
-//Display the message when countdown is over 
-if (timeLeft < 0) {
-  clearInterval(myFunc);
-  document.getElementsByID("mins").innerHTML = ""
-  document.getElementsByID("secs").innerHTML = ""
-  document.getElementsByID("end").innerHTML = "Time's up!";
 }
-}, 1000);
 
 
-//When a user clicks an option button, the option is selected.
+
+//When a user clicks an option button, the option is selected
 option1.addEventListener("click", optionSelected)
 option2.addEventListener("click", optionSelected)
 option3.addEventListener("click", optionSelected)
 option4.addEventListener("click", optionSelected)
-restart.addEventListener("click", saveUser)
 
-//This function shows the questions and options. 
+
+//This function shows the questions and options
 function showQuestions() {
-    questions.textContent = questiondb[currentQuestion].question
-    option1.textContent = questiondb[currentQuestion].options[0]
-    option2.textContent = questiondb[currentQuestion].options[1]
-    option3.textContent = questiondb[currentQuestion].options[2]
-    option4.textContent = questiondb[currentQuestion].options[3]
+  questions.textContent = questiondb[currentQuestion].question
+  option1.textContent = questiondb[currentQuestion].options[0]
+  option2.textContent = questiondb[currentQuestion].options[1]
+  option3.textContent = questiondb[currentQuestion].options[2]
+  option4.textContent = questiondb[currentQuestion].options[3]
 
-  }
+}
 
-  //Start button function 
+//Start button function 
 startButton.addEventListener("click", function () {
-    console.log("Start")
-    quizBox.style.display = "block";
-    startButton.style.display = "none";
-    showQuestions()
-    
-  })
+  console.log("Start")
+  quizBox.style.display = "block";
+  startButton.style.display = "none";
+  showTimer()
+  showQuestions()
+})
 
+//Functions for options selected
 function optionSelected() {
 
-    var userAnswer = this.getAttribute("data-value")
-    console.log(userAnswer)
-    var correctAnswer = questiondb[currentQuestion].answer;
+  var userAnswer = this.getAttribute("data-value")
+  console.log(userAnswer)
+  var correctAnswer = questiondb[currentQuestion].answer;
 
-    if (userAnswer === correctAnswer) {
-      console.log("That's a correct answer!");
-      timer.textContent = "Correct!"
-      score.textContent = score;
-    }
-
-    else {
-      timer = timer -= 5;
-      console.log("That's wrong!");
-      timer.textContent = "Wrong..."
-      score.textContent = score;
-    }
-    if (currentQuestion < questiondb.length - 1) {
-      currentQuestion++
-      showQuestions()
-    }
-
-    else {
-      console.log("Congrats, you've completed the quiz!")
-      theEnd()
-    }
-
+  if (userAnswer === correctAnswer) {
+    console.log("That's a correct answer!");
+    timer.textContent = "Correct!"
+    ++score;
+    alert(score);
   }
+
+  else {
+  timer--;
+    console.log("That's wrong!");
+    timer.textContent = "Wrong..."
+  }
+  if (currentQuestion < questiondb.length - 1) {
+    currentQuestion++
+    showQuestions()
+  }
+
+  else {
+    alert("Congrats, you've completed the quiz!")
+    theEnd()
+  }
+
+}
 
 function theEnd() {
-    resultBox.style.display = "block"
-    quizBox.style.display = "none"
-    scorealert.textContent = score
-  }
+  resultBox.style.display = "block"
+  quizBox.style.display = "none"
+  document.getElementById('score').innerHTML = score;
+}
 
-function saveUser() {
-    var user = userName.value
-    console.log(user, score)
-  }
+// function saveUsername() {
+//   var user = userName.value
+  saveUsername.addEventListener('click', function (
+    
+  ){
 
-  localStorage.setItem("user", userName)
-  localStorage.setItem("score", score)
+
+  })
+  console.log(user, score)
+}
+
+localStorage.setItem("user", userName)
+localStorage.setItem("score", score)
+
+//renderScoreBoard doesn't have a function yet 
+renderScore();
+
+// set new submission
+localStorage.setItem("user", JSON.stringify(user));
 

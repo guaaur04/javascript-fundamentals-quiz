@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Javascript Questions</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+
 
 </head>
-<header>Welcome to the Javascript Quiz</header>
+<h1 class="header">Welcome to the Javascript Quiz</h1>
 <h2> Get ready! </h2>
 
 
@@ -45,27 +48,28 @@
 
                         <div id="time-line"></div>
                     
-                        <aside class="timer"></aside>
-
-                        <div id="timer-countdown">
-                            <p id="mins">Minutes</p>
+                        <aside class="timer">
                             <p id="secs">Seconds</p>
                             <h4 id="end"></h4>
+                        </aside>
 
                         </div>
-
-                        
 
                     </aside>
 
                 </div>
                 <!---The results-->
                 <div id="result-box">
-                    <h1>Score</h1>
-                    <div id="score-alert"></div>
+                    <h1>Your final score is</h1>
+                    <div id="score"></div>
                     <div class="buttons">
-                        <input type="text" id="username" />
-                        <button id="restart">Save Username</button>
+                        <h2>Enter your initials and save to the scoreboard!</h2>
+                        <input type="text" id="username"/></input>
+                        <button id="save-username">Submit</button>
+
+                    <div id="scoreboard">
+                        <ol id= "score-chart"></ol>
+                    </div>
 
                     </div>
                 </div>
