@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Javascript Questions</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
 
 
 </head>
@@ -22,14 +22,17 @@
     <!---How to play?-->
     <div class="info-box">
         <div class="info-title"><span>Game Information</span></div>
-<br>
+
+    <br>
+
         <div class="info-list">
             <div class="info-list">
                 <div class="info">You have 20 seconds to complete the quiz.<div class="info">5 seconds off the clock for
                         every wrong answer.
                         <div class="info">1 point for every correct answer.</div>
                     </div>
-<br>
+    <br>
+
                     <div class="buttons">
                         <button id="start-button">Start</button>
                     </div>
@@ -47,42 +50,42 @@
                         <button id="option4" class="answers" data-value="D"></button>
                     </div>
 
-                        <div id="time-line"></div>
-                    
-                        <aside class="timer">
-                            <p id="secs">Seconds</p>
-                            <h4 id="end"></h4>
-                        </aside>
+                    <div id="time-line"></div>
 
-                        </div>
-
+                    <aside class="timer">
+                        <p id="secs">Seconds</p>
+                        <h4 id="end"></h4>
                     </aside>
 
                 </div>
-                <!---The results-->
-                <div id="result-box">
-                    <h1>Your final score is</h1>
-                    <br>
-                    <div id="score"></div>
-                    <br>
-                    <div class="buttons">
-                        <h2>Enter your initials and save to the scoreboard!</h2>
-                        <form id="form">
-                        <input type="text" id="username"/></input>
-                        <input type ="button" value= "Submit" id="save-username"></button>
-                        </form>
-                    </div>
-                </div>
+
+                </aside>
+
+            </div>
+            <!---The results-->
+            <div id="result-box">
+                <h1>Your final score is</h1>
                 <br>
-                <!---The Scoreboard-->   
-                    <div class="scoreboard">
-                        <div id="username"> 
-                    </div>
-
-                    </div>
+                <div id="score"></div>
+                <br>
+                <div class="buttons">
+                    <h2>Enter your initials and save to the scoreboard!</h2>
+                    <form id="form">
+                        <input type="text" id="username" /></input>
+                        <input type="button" value="Submit" id="save-username"></button>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <!---The Scoreboard-->
+            <div class="scoreboard">
+                <div id="username">
                 </div>
 
-                <script src="./script.js"></script>
+            </div>
+        </div>
+
+        <script src="./script.js"></script>
 
 </body>
 

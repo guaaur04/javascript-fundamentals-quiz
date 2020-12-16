@@ -2,7 +2,7 @@
 
 Hi, 
 
-😁Welcome to my first Javascript Quiz😁
+🌱Welcome to my first Javascript Quiz🌱
 Go back in time with this simple style, and test basic Javascript knowledge. 
 
 **How does the quiz work?**
@@ -21,4 +21,8 @@ Go back in time with this simple style, and test basic Javascript knowledge.
 
 **Links**
 👨🏾‍🔧 Github: https://github.com/guaaur04/javascript-fundamentals-quiz
+
 💻 Live application: https://guaaur04.github.io/javascript-fundamentals-quiz/ 
+
+*Note from the developer*: I am having trouble presenting the updated scoreboard to the user by retrieving local storage data 🤔
+
