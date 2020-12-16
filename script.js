@@ -14,13 +14,13 @@ var questiondb = [
   },
   {
     number: 2,
-    question: "What is the proper way to link a Javascript file into your HTML file?",
+    question: "Which of these is not a Boolean?",
     answer: "B",
     options: [
-      "Option 1",
-      "Option 2",
-      "Option 3",
-      "Option 4"
+      "Yes/No",
+      "SOS",
+      "On/Off",
+      "True/False"
     ]
   },
   {
@@ -28,32 +28,32 @@ var questiondb = [
     question: "What is NaN?",
     answer: "C",
     options: [
-      "Option 1",
-      "Option 2",
-      "Option 3",
-      "Option 4"
+      "Nodes and Numbers",
+      "Never a Number",
+      "Not a Number",
+      "Nigh a Number"
     ]
   },
   {
     number: 4,
-    question: "What is the difference between local and session storage?",
+    question: "Which is not a logical operator?",
     answer: "D",
     options: [
-      "Option 1",
-      "Option 2",
-      "Option 3",
-      "Option 4"
+      "&&",
+      "==",
+      "!",
+      "~~~"
     ]
   },
   {
     number: 5,
     question: "Where's my dog?",
-    answer: "E",
+    answer: "A",
     options: [
-      "Option 1",
-      "Option 2",
-      "Option 3",
-      "Option 4"
+      "The doggo eat spagheto",
+      "This is not a Javascript related question",
+      "Check in local storage",
+      "What?"
     ]
   },
   {
@@ -61,10 +61,10 @@ var questiondb = [
     question: "What is HTML?",
     answer: "A",
     options: [
-      "Hyper Text mark up language",
-      "Option 2",
-      "Option 3",
-      "Option 4"
+      "Hyper Text Mark Up Language",
+      "History Text Marker Line",
+      "Hyper Text Math Language",
+      "History Type Mark Up Loop"
     ]
   },
 ];
@@ -85,7 +85,7 @@ var timer = document.getElementById("#timer-countdown")
 var minutes = document.getElementById("mins")
 var seconds = document.getElementById("secs")
 var scoreChart = document.querySelector("#score-chart")
-var saveUsername =document.querySelector("#save-username")
+var saveUsername = document.querySelector("#save-username")
 
 //Hides results and quiz box 
 resultBox.style.display = "none";
@@ -157,7 +157,7 @@ function optionSelected() {
   }
 
   else {
-  timer--;
+    timeLeft = timeLeft - 5;
     console.log("That's wrong!");
     timer.textContent = "Wrong..."
   }
@@ -167,7 +167,7 @@ function optionSelected() {
   }
 
   else {
-    alert("Congrats, you've completed the quiz!")
+    alert("Congrats, you've completed the quiz!");
     theEnd()
   }
 
@@ -176,26 +176,19 @@ function optionSelected() {
 function theEnd() {
   resultBox.style.display = "block"
   quizBox.style.display = "none"
-  document.getElementById('score').innerHTML = score;
+  document.getElementById("score").innerHTML = score;
 }
 
-// function saveUsername() {
-//   var user = userName.value
-  saveUsername.addEventListener('click', function (
-    
-  ){
+saveUsername.addEventListener('click', function (event) {
+  document.querySelector("form").submit();
+  console.log(userName, score);
+  userName = userName.input;
+  score = score.value;
 
-
-  })
-  console.log(user, score)
+  localStorage.setItem('userName', JSON.stringify(userName));
+  console.log(JSON.parse(localStorage.getItem('userName')));
+  localStorage.setItem('score', JSON.stringify(score));
+  console.log(JSON.parse(localStorage.getItem('score')));
 }
-
-localStorage.setItem("user", userName)
-localStorage.setItem("score", score)
-
-//renderScoreBoard doesn't have a function yet 
-renderScore();
-
-// set new submission
-localStorage.setItem("user", JSON.stringify(user));
+)
 
